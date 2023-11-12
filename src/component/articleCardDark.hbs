@@ -1,0 +1,17 @@
+<main class='articles'>
+  {{#each articles}}
+    <div class='card'>
+      <img
+        src='{{photo}}'
+        alt='Main img'
+        class='card_image'
+      />
+      <h2 class='card_heading'>{{name}}</h2>
+      <p class='card_info'>{{description}}</p>
+      <a href='#' class='btn btn-primary'>Read All</a>
+      {{#if isNew includeZero=true}}
+        <span class='notify-badge'>{{isNew}}</span>
+      {{/if}}
+    </div>
+  {{/each}}
+</main>
