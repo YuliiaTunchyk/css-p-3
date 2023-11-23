@@ -17,7 +17,22 @@ router.get('/', function (req, res) {
 })
 
 // ================================================================
+// ================================================================
 
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/slack', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('slack', {
+    layout: null,
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -973,6 +988,13 @@ router.get('/template-7', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
+// ================================================================
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
 
 router.get('/template-6', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -1012,10 +1034,36 @@ router.get('/template-6', function (req, res) {
           type: 'email',
         },
         {
+          id: 1,
+          name: 'emailAddress',
+          placeholder: 'Email address',
+          type: 'email',
+        },
+        {
           id: 2,
           name: 'userPassword',
           placeholder: 'Password',
           type: 'password',
+        },
+      ],
+      checkbox: {
+        label: 'Remember me',
+        name: 'remember',
+      },
+      button: 'Sign in',
+      info: 'By clicking Sign up, you agree to the terms of use.',
+    },
+    updates: {
+      title: 'Recent updates',
+      list: [
+        {
+          id: 2,
+          name: 'userPassword',
+          placeholder: 'Password',
+          type: 'password',
+          nickname: 'Techie',
+          description:
+            'The latest software update includes several new features and performance improvements, making it faster and easier to use...',
         },
       ],
       checkbox: {
@@ -1112,6 +1160,18 @@ router.get('/template-6', function (req, res) {
       {
         title: 'About',
         links: [
+          {
+            text: 'Team',
+            url: 'https://example.com/team',
+          },
+          {
+            text: 'Locations',
+            url: 'https://example.com/locations',
+          },
+          {
+            text: 'Privacy',
+            url: 'https://example.com/privacy',
+          },
           {
             text: 'Team',
             url: 'https://example.com/team',
